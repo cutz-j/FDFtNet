@@ -9,7 +9,7 @@ Hyeonseong Jeon, Youngoh Bang,  and Simon S. Woo.
 - Download model weights
 - `bash weights/download_weights.sh`
 
-## (2) Quick start
+## (2) Quick start (pre-trarined weight evaluation)
 ```
 # 
 ```
