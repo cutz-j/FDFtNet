@@ -1,7 +1,6 @@
 # now editing...
 ## FDFtNet: Facing Off Fake Images using Fake Detection Fine-tuning Network.
 Hyeonseong Jeon, Youngoh Bang,  and Simon S. Woo.
-
  
 ## (1) Setup
 ### Install packages
@@ -9,22 +8,27 @@ Hyeonseong Jeon, Youngoh Bang,  and Simon S. Woo.
 - Download model weights
 - `bash weights/download_weights.sh`
 
-## (2) Quick start (pre-trarined weight evaluation)
-```
-# 
-```
+## (2) Datasets
+The dataset in the paper can be downloaded here.
+Deepfake: https://github.com/ondyari/FaceForensics
+Face2Face: https://github.com/ondyari/FaceForensics
+* PGGAN dataset is not disclosed at the request of the dataset source.
+### Preprocessing
+this part will be uploaded.
 
-## (3) Dataset
-The testset evaluated in the paper can be downloaded here.
+## (3) Models
+SqueezeNet
+ResNetV2
+Xception
+* ShallowNetV3 is not disclosed at the request of the model source.
 
-```
-# Download the dataset
-cd dataset
-bash download_testset.sh
-cd ..
-```
-
-## (4) Train
+## (4) Quick-start
 
 
-## (5) Evaluation
+## (5) Pre-train
+
+
+## (6) Fine-tune
+
+
+## (7) Evaluate
