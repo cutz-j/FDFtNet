@@ -1,4 +1,5 @@
-# now editing...
+# now editing... 
+# Upload is being delayed by Coronavirus in our country. Thank you for your interest and Sorry for being delayed.
 ## FDFtNet: Facing Off Fake Images using Fake Detection Fine-tuning Network.
 Hyeonseong Jeon, Youngoh Bang,  and Simon S. Woo.
  
