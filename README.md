@@ -13,7 +13,16 @@ The dataset in the paper can be downloaded here.
 * Deepfake: https://github.com/ondyari/FaceForensics
 * Face2Face: https://github.com/ondyari/FaceForensics
 * PGGAN dataset is not disclosed at the request of the dataset source.
+
+Original dataset of the Deepfake, Face2Face can also be downloaded from FaceForensics
 ### Preprocessing
+The downloaded videos must be in dataset/videos.
+The downloaded dataset are videos. To apply our detection method, faces from the videos must be cropped by frames. 
+```
+# Crop the face parts to image from the videos by frame
+cd dataset
+python preprocess_dataset.py -d youtube
+```
 this part will be uploaded.
 
 ## (3) Models
