@@ -23,6 +23,10 @@ The downloaded dataset are videos. To apply our detection method, faces from the
 cd dataset
 python preprocess_dataset.py -d youtube
 ```
+```
+python preprocess_dataset.py
+ -d <dataset type, e.g., youtube, Deepfakes, Face2Face>
+```
 this part will be uploaded.
 
 ## (3) Models
