@@ -11,10 +11,10 @@ def data_source(name):
         source_dir = os.path.join(root_dir, 'videos/original_sequences/youtube/raw/videos')
     elif name == 'Deepfakes':
         source_name = 'Deepfakes'
-        source_dir = os.path.join(root_dir, 'manipulated_sequences/Deepfakes/raw/videos')
+        source_dir = os.path.join(root_dir, 'videos/manipulated_sequences/Deepfakes/raw/videos')
     elif name == 'Face2Face':
         source_name = 'Face2Face'
-        source_dir = os.path.join(root_dir, 'manipulated_sequences/Face2Face/raw/videos')
+        source_dir = os.path.join(root_dir, 'videos/manipulated_sequences/Face2Face/raw/videos')
 
     return source_name, source_dir
 
