@@ -16,8 +16,7 @@ The dataset in the paper can be downloaded here.
 
 Original dataset of the Deepfake, Face2Face can also be downloaded from FaceForensics
 ### Preprocessing
-The downloaded videos must be in dataset/videos.
-The downloaded dataset are videos. To apply our detection method, faces from the videos must be cropped by frames. 
+Will be uploaded soon...
 ```
 # Crop the face parts to image from the videos by frame
 cd dataset
