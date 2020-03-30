@@ -6,7 +6,7 @@ from keras.layers import SeparableConv2D, Add
 from keras.models import Model
 
 
-def xception(img_height=64, img_width=64, dropout_rate=0.2):
+def xception(img_height=64, img_width=64, dropout_rate=0.2, include_top=True):
     img_input = Input(shape=(img_height, img_width, 3))
 
     # layer 1 #
@@ -109,9 +109,10 @@ def xception(img_height=64, img_width=64, dropout_rate=0.2):
     x = BatchNormalization()(x)
     x = Activation('relu')(x)
 
-    x = GlobalAveragePooling2D()(x)
-    x = Dense(units=2, activation='softmax')(x)
-    output = Dropout(dropout_rate)(x)
+    if include_top == True:
+        x = GlobalAveragePooling2D()(x)
+        x = Dense(units=2, activation='softmax')(x)
+        x = Dropout(dropout_rate)(x)
 
-    model = Model(img_input, output)
+    model = Model(img_input, x)
     return model

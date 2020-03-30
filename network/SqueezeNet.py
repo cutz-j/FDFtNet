@@ -7,7 +7,7 @@ from keras.layers import SeparableConv2D, Add, Convolution2D, concatenate, Layer
 from keras.models import Model, load_model, model_from_json
 
 
-def squeezeNet(img_height=64, img_width=64, dropout_rate=0.2):
+def squeezeNet(img_height=64, img_width=64, dropout_rate=0.2, include_top=True):
     sq1x1 = "squeeze1x1"
     exp1x1 = "expand1x1"
     exp3x3 = "expand3x3"
@@ -58,9 +58,11 @@ def squeezeNet(img_height=64, img_width=64, dropout_rate=0.2):
 
     x_dp = Dropout(dropout_rate)(x)
     x_conv = Convolution2D(2, (1, 1), padding='valid', name='conv10')(x)
-    x_relu = Activation('relu', name='relu_conv10')(x_conv)
-    x_gap = GlobalAveragePooling2D()(x_relu)
-    x_sm = Activation('softmax', name='loss')(x_gap)
+    x = Activation('relu', name='relu_conv10')(x_conv)
 
-    model = Model(img_input, x_sm, name='squeezenet')
+    if include_top == True:
+        x = GlobalAveragePooling2D()(x)
+        x = Activation('softmax', name='loss')(x)
+
+    model = Model(img_input, x, name='squeezenet')
     return model
