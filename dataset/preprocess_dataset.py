@@ -3,6 +3,8 @@ import glob
 import cv2
 from mtcnn import MTCNN
 import argparse
+# Select GPU before generation
+os.environ["CUDA_DEVICE_ORDER"] = "0, 1"
 
 
 def data_source(name):
@@ -88,6 +90,8 @@ data_name, data_dir = data_source(args.d)
 
 # cut the video by frame
 image_dir = video2image(data_name, data_dir)
+print("Cutting out frames from videos is complete.")
 
 # crop face part from image
 crop_face(image_dir)
+print("Cropping out faces from images is complete.")
