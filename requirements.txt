@@ -2,4 +2,4 @@ scipy
 scikit-learn
 numpy
 opencv_python
-pillow
+Pillow
