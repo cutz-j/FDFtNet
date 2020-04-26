@@ -13,7 +13,6 @@ from keras.models import Model
 
 
 """
-parsing grouping해서 하도록 주의하기
 ft_dir
 shear_range
 zoom_range
@@ -22,7 +21,7 @@ width_shift_range
 height_shift_range
 horizontal_flip
 zca_whitening
-cutout_use, boolean(True, False로 받아서 True면 사용, False 면 none)
+cutout_use (boolean)
 if cutout_use:
     co = cutout
 else:
@@ -37,7 +36,7 @@ ld
 img_height = 64
 img_width = 64
 
-os.environ["CUDA_VISIBLE_DEVICES"] = '0'  # str(gpu_ids) # gpu_ids를 list로 받아오는 경우도 있는데 그거는 추후에
+os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 ### 나중에 지우기
 
 
@@ -53,7 +52,7 @@ train_gen_aug = ImageDataGenerator(shear_range=0,
                                horizontal_flip=True,
                                zca_whitening=False,
                                fill_mode='nearest',
-                               preprocessing_function=cutout) # co로 변경
+                               preprocessing_function=cutout) # chagne this to co
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 
@@ -71,7 +70,7 @@ validation_generator = test_datagen.flow_from_directory(validation_dir,
                                                         class_mode='categorical')
 
 
-model_ft = load_model('/home/www/fake_detection/model/deepfake_xception.h5') # weight_dir로 변경해주기
+model_ft = load_model('/home/www/fake_detection/model/deepfake_xception.h5') # change this to weight
 for i in range(2):
     model_ft.layers.pop()
 im_in = Input(shape=(img_width, img_height, 3))

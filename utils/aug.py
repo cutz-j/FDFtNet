@@ -2,7 +2,8 @@ import numpy as np
 
 
 def cutout(img, max_cuts=3, max_length_multiplier=5):
-    # args로 max_cuts, max_length_multiplier 받아오기
+    # max_cuts: alpha for Cutmix
+    # max_length_multiplier = beta for Cutmix
     """
     # Function: RandomCrop (ZeroPadded (4, 4)) + random occulusion image
     # Arguments:
