@@ -4,7 +4,7 @@ import cv2
 from mtcnn import MTCNN
 import argparse
 # Select GPU before generation
-os.environ["CUDA_DEVICE_ORDER"] = "0, 1"
+os.environ["CUDA_DEVICE_ORDER"] = "0"
 
 
 def data_source(name):
@@ -68,9 +68,20 @@ def crop_face(img_dir):
 
         result = detector.detect_faces(image)
         bounding_box = result[0]['box']
+        keypoints = result[0]['keypoints']
 
-        cropped_image = image2[bounding_box[1]:(bounding_box[1] + bounding_box[3]),
-                                bounding_box[0]:(bounding_box[0] + bounding_box[2])]
+        nose = keypoints['nose']
+
+        box_length_1 = bounding_box[2]
+        box_length_2 = bounding_box[3]
+
+        if box_length_1 >= box_length_2:
+            box_length = int(box_length_1 / 2)
+        else:
+            box_length = int(box_length_2 / 2)
+
+        cropped_image = image2[(nose[1] - box_length):(nose[1] + box_length),
+                                (nose[0] - box_length):(nose[0] + box_length)]
 
         cv2.imwrite(i, cropped_image)
 
