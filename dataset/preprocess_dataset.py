@@ -65,9 +65,14 @@ def crop_face(img_dir):
         image = cv2.imread(i)
         image2 = image.copy()
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-
         result = detector.detect_faces(image)
-        bounding_box = result[0]['box']
+
+        try:
+            bounding_box = result[0]['box']
+        except IndexError:
+            os.remove(i)
+            continue
+
         keypoints = result[0]['keypoints']
 
         nose = keypoints['nose']
@@ -83,7 +88,10 @@ def crop_face(img_dir):
         cropped_image = image2[(nose[1] - box_length):(nose[1] + box_length),
                                 (nose[0] - box_length):(nose[0] + box_length)]
 
-        cv2.imwrite(i, cropped_image)
+        if cropped_image.size == 0:
+            continue
+        else:
+            cv2.imwrite(i, cropped_image)
 
     os.chdir(root_dir)
 
