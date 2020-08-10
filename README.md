@@ -1,4 +1,3 @@
-# now editing... 
 Upload is being delayed by Coronavirus in our country. Thank you for your interest and Sorry for being delayed.
 
 ## FDFtNet: Facing Off Fake Images using Fake Detection Fine-tuning Network.
@@ -47,3 +46,6 @@ python preprocess_dataset.py
 
 ## References
 \[[1](https://ieeexplore.ieee.org/abstract/document/7553523)\] Zhang, K., Zhang, Z., Li, Z., and Qiao, Y. (2016). Joint face detection and alignment using multitask cascaded convolutional networks. IEEE Signal Processing Letters, 23(10):1499–1503.
+
+# To-do
+Pre-train, Fine-tune, Evaluate
