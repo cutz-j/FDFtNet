@@ -1,6 +1,14 @@
 ## FDFtNet: Facing Off Fake Images using Fake Detection Fine-tuning Network.
 Hyeonseong Jeon, Youngoh Bang,  and Simon S. Woo
  
+## Overview of our framework.
+<img src='./image/overview.png' width=1000>
+
+## Clone
+```
+git clone https://github.com/cutz-j/FDFtNet
+```
+
 ## (1) Setup
 ### Install packages
 - `pip install -r requirements.txt`
@@ -13,7 +21,6 @@ The dataset in the paper can be downloaded here.
 
 Original dataset of the Deepfake, Face2Face can also be downloaded from FaceForensics
 ### Preprocessing
-Will be uploaded soon...
 ```
 # Crop the face parts to image from the videos by frame
 cd dataset
@@ -31,6 +38,13 @@ python preprocess_dataset.py
 * Xception
 * ShallowNetV3 is not disclosed at the request of the model source.
 
+## (4) Pretrain models
+```
+# Dataset needs to be downloaded.
+# Choose networks above (squeezeNet, xception, resnetv2)
+
+python pretrain.py --network xception --train_dir dataset --val_dir dataset
+```
 
 ## References
 \[[1](https://ieeexplore.ieee.org/abstract/document/7553523)\] Zhang, K., Zhang, Z., Li, Z., and Qiao, Y. (2016). Joint face detection and alignment using multitask cascaded convolutional networks. IEEE Signal Processing Letters, 23(10):1499–1503.
