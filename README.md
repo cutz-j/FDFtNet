@@ -46,8 +46,17 @@ python preprocess_dataset.py
 python pretrain.py --network xception --train_dir dataset --val_dir dataset
 ```
 
+## (5) Fine-tune
+```
+# Dataset needs to be downloaded.
+# Choose networks above (squeezeNet, xception, resnetv2)
+# Pre-trained model is needed.
+
+python fdft.py --pt_model directory --network xception --ft_dir dataset --val_dir dataset
+```
+
 ## References
 \[[1](https://ieeexplore.ieee.org/abstract/document/7553523)\] Zhang, K., Zhang, Z., Li, Z., and Qiao, Y. (2016). Joint face detection and alignment using multitask cascaded convolutional networks. IEEE Signal Processing Letters, 23(10):1499–1503.
 
 # To-do
-Pre-train, Fine-tune, Evaluate
+Evaluate
