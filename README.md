@@ -36,7 +36,7 @@ python preprocess_dataset.py
 * SqueezeNet
 * ResNetV2
 * Xception
-* ShallowNetV3 # not disclosed at the request of the model source.
+* ShallowNetV3 --> not disclosed at the request of the model source.
 
 ## (4) Pretrain models
 ```
